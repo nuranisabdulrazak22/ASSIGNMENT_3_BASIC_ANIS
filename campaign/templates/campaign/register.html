@@ -1,0 +1,38 @@
+{% extends 'campaign/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border border-success">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Volunteer Sign-up</h3>
+            </div>
+            <div class="card-body bg-white p-4">
+                
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger small">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    
+                    <button type="submit" class="btn btn-success w-100 py-2">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

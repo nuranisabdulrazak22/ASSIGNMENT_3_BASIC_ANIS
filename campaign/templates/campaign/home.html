@@ -1,0 +1,13 @@
+{% extends 'campaign/base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 border shadow-sm">
+    <div class="container-fluid py-5 text-center">
+        <h1 class="display-5 fw-bold text-success">Take Climate Action Now!</h1>
+        <p class="col-md-8 fs-4 mx-auto text-muted">
+            Welcome to EcoAction. Our planet is facing an unprecedented climate crisis. 
+            We advocate for Sustainable Development Goal 13 (Climate Action) by mobilizing communities.
+        </p>
+        <a href="{% url 'register' %}" class="btn btn-success btn-lg px-4 mt-3">Join as a Volunteer</a>
+    </div>
+</div>
+{% endblock %}
